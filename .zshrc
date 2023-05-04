@@ -63,9 +63,14 @@ bindkey '^[[B' history-substring-search-down
 ### Functions
 function UPG() {sudo pacman -Syu; yay -Syu; zinit self-update; zinit update --all}
 function runcpp() {command g++ -O2 $1 -std=c++17 -I ~/C++/include -g -fsanitize=undefined,address; ./a.out}
+function runpy() {python $1}
 
 ### Aliases
 alias cl='clear'
 alias ls='ls --color=auto'
 alias upg='UPG'
 alias -s cpp='runcpp'
+alias -s py='runpy'
+
+### PATH
+export PATH="$PATH:$HOME/.local/bin"
